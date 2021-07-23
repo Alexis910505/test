@@ -12,7 +12,6 @@ class SelectVehicleController extends GetxController {
   final OrderSummaryRepository _orderSummaryRepository =
       Get.find<OrderSummaryRepository>();
   final String _address = Get.arguments;
-  ScrollController controller = ScrollController();
   RxBool _closeTopContainer = false.obs;
   bool get closeTopContainer => _closeTopContainer.value;
 
@@ -43,9 +42,6 @@ class SelectVehicleController extends GetxController {
   @override
   void onInit() {
     _init();
-    controller.addListener(() {
-      _closeTopContainer.value = controller.offset > 1;
-    });
     super.onInit();
   }
 
@@ -55,14 +51,14 @@ class SelectVehicleController extends GetxController {
 
   void onChangedMax(int index) {
     vehicles[index].count = vehicles[index].count + 1;
-    _costTotal();
+    _payCount.value += vehicles[index].cost;
     update();
   }
 
   void onChangedMin(int index) {
     if (vehicles[index].count != 0) {
       vehicles[index].count = vehicles[index].count - 1;
-      _costTotal();
+      _payCount.value -= vehicles[index].cost;
       update();
     }
   }
@@ -70,6 +66,7 @@ class SelectVehicleController extends GetxController {
   void onChangedCount(int index, String value) {
     if (int.parse(value) >= 0) {
       vehicles[index].count = int.parse(value);
+
       _costTotal();
       update();
     }
@@ -89,6 +86,14 @@ class SelectVehicleController extends GetxController {
 
   void onChangedSelect() {
     _select.value = !_select.value;
+  }
+
+  void onTapUp() {
+    _closeTopContainer.value = true;
+  }
+
+  void onTapDown() {
+    _closeTopContainer.value = false;
   }
 
   void onChangedDate(date) {

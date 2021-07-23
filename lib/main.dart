@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:uber_test/app/modules/home/home_binding.dart';
+import 'package:uber_test/app/modules/home/home_page.dart';
 import 'package:uber_test/app/modules/splash/splash_binding.dart';
 import 'package:uber_test/app/modules/splash/splash_page.dart';
 import 'package:uber_test/app/routes/app_pages.dart';
@@ -17,8 +19,8 @@ class CarScrubbing extends StatelessWidget {
       title: 'Car Scrubbing',
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.zoom,
-      home: SplashPage(),
-      initialBinding: SplashBinding(),
+      home: HomePage(),
+      initialBinding: HomeBinding(),
       getPages: AppPages.pages,
     );
   }

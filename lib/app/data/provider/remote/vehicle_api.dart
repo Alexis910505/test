@@ -18,14 +18,6 @@ class VehicleApi {
         Vehicle(image: 'assets/car.png', trademark: 'SUV', cost: 26.89),
         Vehicle(image: 'assets/car.png', trademark: 'Coupe', cost: 35.98),
         Vehicle(image: 'assets/car.png', trademark: 'Sedan', cost: 21.55),
-        Vehicle(image: 'assets/car.png', trademark: 'Sedan', cost: 21.55),
-        Vehicle(image: 'assets/car.png', trademark: 'SUV', cost: 26.89),
-        Vehicle(image: 'assets/car.png', trademark: 'Coupe', cost: 35.98),
-        Vehicle(image: 'assets/car.png', trademark: 'SUV', cost: 26.89),
-        Vehicle(image: 'assets/car.png', trademark: 'Sedan', cost: 21.55),
-        Vehicle(image: 'assets/car.png', trademark: 'SUV', cost: 26.89),
-        Vehicle(image: 'assets/car.png', trademark: 'Coupe', cost: 35.98),
-        Vehicle(image: 'assets/car.png', trademark: 'SUV', cost: 26.89),
       ];
     } catch (e) {
       print(e);

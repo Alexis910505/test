@@ -79,7 +79,7 @@ class SelectVehiclePage extends StatelessWidget {
               ),
               Obx(
                 () => AnimatedContainer(
-                  duration: const Duration(milliseconds: 1500),
+                  duration: const Duration(milliseconds: 500),
                   alignment: Alignment.topCenter,
                   height: _.closeTopContainer ? 0 : categoryHeight,
                   width: size.width,
